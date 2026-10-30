@@ -9,7 +9,7 @@
           "title": "Novelas",
           "subtitle": "Resumos de hoje",
           "image_ratio": "16by9",
-          "image_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2e/Copacabana%2C_Rio_de_Janeiro%2C_Brazil.jpg/640px-Copacabana%2C_Rio_de_Janeiro%2C_Brazil.jpg",
+          "image_url": "https://ddehilster.github.io/luanda-player/novelas.jpg",
           "action_data": "{\"open\":\"novelas\"}",
           "is_playable": false
         },
