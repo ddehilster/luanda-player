@@ -1,59 +1,66 @@
 {
-  "sections": [
-    {
-      "title": "Brasil",
-      "title_display_mode": "AlwaysOn",
-      "subtitle_display_mode": "HighlightedOnly",
-      "tiles": [
-        {
-          "title": "A Nobreza do Amor",
-          "subtitle": "Novela das 6",
-          "image_ratio": "16by9",
-          "image_url": "https://ddehilster.github.io/luanda-player/novela-6.jpg",
-          "action_data": "{\"open\":\"novela\",\"slot\":\"6\"}",
-          "is_playable": false
-        },
-        {
-          "title": "Por Você",
-          "subtitle": "Novela das 7",
-          "image_ratio": "16by9",
-          "image_url": "https://ddehilster.github.io/luanda-player/novela-7.jpg",
-          "action_data": "{\"open\":\"novela\",\"slot\":\"7\"}",
-          "is_playable": false
-        },
-        {
-          "title": "Quem Ama Cuida",
-          "subtitle": "Novela das 9",
-          "image_ratio": "16by9",
-          "image_url": "https://ddehilster.github.io/luanda-player/novela-9.jpg",
-          "action_data": "{\"open\":\"novela\",\"slot\":\"9\"}",
-          "is_playable": false
-        },
-        {
-          "title": "Jornal Nacional",
-          "subtitle": "Notícias",
-          "image_ratio": "16by9",
-          "image_url": "https://ddehilster.github.io/luanda-player/jornal.jpg",
-          "action_data": "{\"open\":\"novela\",\"slot\":\"jn\"}",
-          "is_playable": true
-        },
-        {
-          "title": "Vídeos da Luanda",
-          "subtitle": "Shows e apresentações",
-          "image_ratio": "16by9",
-          "image_url": "https://i.ytimg.com/vi/l90-cWNAn8Q/hqdefault.jpg",
-          "action_data": "{\"open\":\"videos\"}",
-          "is_playable": true
-        },
-        {
-          "title": "Fotos da Luanda",
-          "subtitle": "Apresentação de fotos",
-          "image_ratio": "16by9",
-          "image_url": "https://i.ytimg.com/vi/FKQzZDCNGv0/hqdefault.jpg",
-          "action_data": "{\"open\":\"fotos\"}",
-          "is_playable": false
-        }
-      ]
-    }
-  ]
+    "sections":  [
+                     {
+                         "title":  "Brasil",
+                         "title_display_mode":  "AlwaysOn",
+                         "subtitle_display_mode":  "HighlightedOnly",
+                         "tiles":  [
+                                       {
+                                           "title":  "A Nobreza do Amor",
+                                           "subtitle":  "Novela das 6",
+                                           "image_ratio":  "16by9",
+                                           "image_url":  "https://ddehilster.github.io/luanda-player/novela-6.jpg",
+                                           "action_data":  "{\"open\":\"novela\",\"slot\":\"6\"}",
+                                           "is_playable":  false,
+                                           "position":  1
+                                       },
+                                       {
+                                           "title":  "Por Você",
+                                           "subtitle":  "Novela das 7",
+                                           "image_ratio":  "16by9",
+                                           "image_url":  "https://ddehilster.github.io/luanda-player/novela-7.jpg",
+                                           "action_data":  "{\"open\":\"novela\",\"slot\":\"7\"}",
+                                           "is_playable":  false,
+                                           "position":  2
+                                       },
+                                       {
+                                           "title":  "Quem Ama Cuida",
+                                           "subtitle":  "Novela das 9",
+                                           "image_ratio":  "16by9",
+                                           "image_url":  "https://ddehilster.github.io/luanda-player/novela-9.jpg",
+                                           "action_data":  "{\"open\":\"novela\",\"slot\":\"9\"}",
+                                           "is_playable":  false,
+                                           "position":  3
+                                       },
+                                       {
+                                           "title":  "Jornal Nacional",
+                                           "subtitle":  "Notícias",
+                                           "image_ratio":  "16by9",
+                                           "image_url":  "https://ddehilster.github.io/luanda-player/jornal.jpg",
+                                           "action_data":  "{\"open\":\"novela\",\"slot\":\"jn\"}",
+                                           "is_playable":  true,
+                                           "position":  4
+                                       },
+                                       {
+                                           "title":  "Vídeos da Luanda",
+                                           "subtitle":  "Shows e apresentações",
+                                           "image_ratio":  "16by9",
+                                           "image_url":  "https://i.ytimg.com/vi/l90-cWNAn8Q/hqdefault.jpg",
+                                           "action_data":  "{\"open\":\"videos\"}",
+                                           "is_playable":  true,
+                                           "position":  5
+                                       },
+                                       {
+                                           "title":  "Fotos da Luanda",
+                                           "subtitle":  "Apresentação de fotos",
+                                           "image_ratio":  "16by9",
+                                           "image_url":  "https://i.ytimg.com/vi/FKQzZDCNGv0/hqdefault.jpg",
+                                           "action_data":  "{\"open\":\"fotos\"}",
+                                           "is_playable":  false,
+                                           "position":  6
+                                       }
+                                   ],
+                         "position":  1
+                     }
+                 ]
 }
