@@ -30,6 +30,14 @@
           "is_playable": false
         },
         {
+          "title": "Jornal Nacional",
+          "subtitle": "Notícias",
+          "image_ratio": "16by9",
+          "image_url": "https://ddehilster.github.io/luanda-player/jornal.jpg",
+          "action_data": "{\"open\":\"novela\",\"slot\":\"jn\"}",
+          "is_playable": true
+        },
+        {
           "title": "Vídeos da Luanda",
           "subtitle": "Shows e apresentações",
           "image_ratio": "16by9",
