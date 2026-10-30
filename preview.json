@@ -1,0 +1,35 @@
+{
+  "sections": [
+    {
+      "title": "Brasil",
+      "title_display_mode": "AlwaysOn",
+      "subtitle_display_mode": "HighlightedOnly",
+      "tiles": [
+        {
+          "title": "Novelas",
+          "subtitle": "Resumos de hoje",
+          "image_ratio": "16by9",
+          "image_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2e/Copacabana%2C_Rio_de_Janeiro%2C_Brazil.jpg/640px-Copacabana%2C_Rio_de_Janeiro%2C_Brazil.jpg",
+          "action_data": "{\"open\":\"novelas\"}",
+          "is_playable": false
+        },
+        {
+          "title": "Vídeos da Luanda",
+          "subtitle": "Shows e apresentações",
+          "image_ratio": "16by9",
+          "image_url": "https://i.ytimg.com/vi/l90-cWNAn8Q/hqdefault.jpg",
+          "action_data": "{\"open\":\"videos\"}",
+          "is_playable": true
+        },
+        {
+          "title": "Fotos da Luanda",
+          "subtitle": "Apresentação de fotos",
+          "image_ratio": "16by9",
+          "image_url": "https://i.ytimg.com/vi/FKQzZDCNGv0/hqdefault.jpg",
+          "action_data": "{\"open\":\"fotos\"}",
+          "is_playable": false
+        }
+      ]
+    }
+  ]
+}
