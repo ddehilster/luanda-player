@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="referrer" content="strict-origin-when-cross-origin">
+<title>Luanda Player</title>
+<style>
+  html, body { margin: 0; height: 100%; background: #000; overflow: hidden; }
+  #frame { position: absolute; top: 0; left: 0; width: 100%; height: 100%; }
+  #msg { position: absolute; top: 48%; width: 100%; text-align: center; color: #fff; font: 32px sans-serif; }
+</style>
+</head>
+<body>
+<div id="frame"></div>
+<div id="msg"></div>
+<script>
+// Full-screen YouTube player for the Brasil TV app: player.html?v=VIDEO_ID
+// The TV app sends 'toggle' / 'seek:+10' / 'seek:-10' via postMessage and gets 'ended' / 'error:N' back.
+var id = (location.search.match(/[?&]v=([\w-]{11})/) || [])[1];
+var player;
+
+function tell(msg) { try { parent.postMessage(msg, '*'); } catch (e) {} }
+
+function onYouTubeIframeAPIReady() {
+  if (!id) { document.getElementById('msg').textContent = 'Vídeo não informado'; return; }
+  player = new YT.Player('frame', {
+    videoId: id,
+    playerVars: { autoplay: 1, controls: 0, rel: 0, modestbranding: 1, playsinline: 1 },
+    events: {
+      onReady: function (e) { e.target.playVideo(); tell('ready'); },
+      onError: function (e) { document.getElementById('msg').textContent = 'Erro ' + e.data; tell('error:' + e.data); },
+      onStateChange: function (e) { if (e.data === YT.PlayerState.ENDED) tell('ended'); }
+    }
+  });
+}
+
+window.addEventListener('message', function (e) {
+  if (!player || !player.getPlayerState) return;
+  if (e.data === 'toggle') {
+    if (player.getPlayerState() === YT.PlayerState.PLAYING) player.pauseVideo(); else player.playVideo();
+  } else if (typeof e.data === 'string' && e.data.indexOf('seek:') === 0) {
+    player.seekTo(Math.max(0, player.getCurrentTime() + parseInt(e.data.slice(5), 10)), true);
+  }
+});
+</script>
+<script src="https://www.youtube.com/iframe_api"></script>
+</body>
+</html>
