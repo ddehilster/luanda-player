@@ -1,0 +1,55 @@
+/* Detail pages (tempo, dólar) shown full screen inside the Brasil TV app. Chromium 63: no flex gap. */
+@font-face { font-family: 'Fraunces'; src: url('fonts/fraunces.woff2') format('woff2'); font-weight: 100 900; }
+@font-face { font-family: 'Nunito'; src: url('fonts/nunito.woff2') format('woff2'); font-weight: 200 1000; }
+
+html, body { margin: 0; width: 1920px; height: 1080px; overflow: hidden; }
+body {
+  color: #fffaf2; font-family: 'Nunito', sans-serif; box-sizing: border-box; padding: 44px 96px 0;
+  background: linear-gradient(160deg, #1d3557 0%, #14213d 55%, #0b0d14 100%);
+}
+header { display: flex; justify-content: space-between; align-items: flex-end; }
+.kicker { font-size: 26px; letter-spacing: 5px; text-transform: uppercase; color: #ffc66d; font-weight: 800; }
+h1 { font-family: 'Fraunces', serif; font-weight: 800; font-size: 72px; margin: 4px 0 0; line-height: 1; }
+h2 { font-family: 'Fraunces', serif; font-weight: 600; font-size: 36px; margin: 22px 0 12px; }
+.msg { position: absolute; top: 48%; left: 0; width: 100%; text-align: center; font-size: 36px; }
+
+/* Weather */
+.sun { font-size: 30px; text-align: right; color: rgba(255,250,242,0.85); }
+.sun .local { font-size: 20px; color: rgba(255,250,242,0.55); margin-top: 4px; }
+.now { display: flex; align-items: center; margin-top: 14px; }
+.now-icon svg { width: 140px; height: 140px; margin-right: 34px; }
+.big { font-family: 'Fraunces', serif; font-size: 112px; font-weight: 600; line-height: 1; }
+.now-desc { font-size: 36px; color: rgba(255,250,242,0.85); margin-top: 6px; }
+.facts { display: flex; margin-left: auto; }
+.facts div { font-family: 'Fraunces', serif; font-size: 48px; font-weight: 600; margin-left: 64px; text-align: right; }
+.facts span { display: block; font-family: 'Nunito', sans-serif; font-size: 22px; font-weight: 400; letter-spacing: 3px; text-transform: uppercase; color: rgba(255,250,242,0.65); }
+.row { display: flex; }
+.cell {
+  flex: 1; text-align: center; background: rgba(255,255,255,0.08); border: 1px solid rgba(255,255,255,0.14);
+  border-radius: 24px; padding: 14px 0 12px; margin-right: 14px;
+}
+.cell:last-child { margin-right: 0; }
+.cell svg { width: 64px; height: 64px; margin: 6px 0; }
+.cell .when { font-size: 26px; font-weight: 800; text-transform: capitalize; }
+.cell .t { font-family: 'Fraunces', serif; font-size: 40px; font-weight: 600; }
+.cell .t span { font-size: 30px; color: rgba(255,250,242,0.6); }
+.cell .d { font-size: 21px; color: rgba(255,250,242,0.75); }
+.cell .rain { font-size: 22px; color: #9fd3ff; margin-top: 4px; }
+.day svg { width: 70px; height: 70px; }
+
+/* Dollar */
+.rate { display: flex; align-items: baseline; margin-top: 30px; }
+.rate .big { margin-right: 40px; }
+.change { font-size: 38px; font-weight: 800; }
+.up { color: #ff8f7a; }
+.down { color: #7ee0a1; }
+.asof { font-size: 26px; color: rgba(255,250,242,0.65); margin-top: 8px; }
+.fx-body { display: flex; margin-top: 30px; }
+.chart { width: 1180px; height: 560px; background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.14); border-radius: 28px; }
+.chart text { fill: rgba(255,250,242,0.75); font-family: 'Nunito', sans-serif; font-size: 22px; }
+.convert { margin-left: 48px; flex: 1; }
+.convert h2 { margin-top: 0; }
+.convert table { width: 100%; border-collapse: collapse; font-size: 36px; }
+.convert td { padding: 10px 0; border-bottom: 1px solid rgba(255,255,255,0.12); }
+.convert td + td { text-align: right; font-family: 'Fraunces', serif; font-weight: 600; }
+.credit { font-size: 18px; color: rgba(255,250,242,0.45); margin-top: 18px; }

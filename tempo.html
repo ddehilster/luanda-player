@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=1920">
+<title>Previsão do tempo</title>
+<link rel="stylesheet" href="detalhe.css">
+</head>
+<body>
+<header>
+  <div>
+    <div class="kicker">Previsão do tempo</div>
+    <h1 id="city"></h1>
+  </div>
+  <div id="sun" class="sun"></div>
+</header>
+
+<section class="now">
+  <div id="now-icon" class="now-icon"></div>
+  <div>
+    <div id="now-temp" class="big"></div>
+    <div id="now-desc" class="now-desc"></div>
+  </div>
+  <div id="now-facts" class="facts"></div>
+</section>
+
+<h2>Próximas horas</h2>
+<section id="hours" class="row"></section>
+
+<h2>Próximos 7 dias</h2>
+<section id="days" class="row"></section>
+
+<div id="msg" class="msg">Carregando...</div>
+
+<script src="tempo.js"></script>
+</body>
+</html>

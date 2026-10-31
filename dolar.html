@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=1920">
+<title>Dólar hoje</title>
+<link rel="stylesheet" href="detalhe.css">
+</head>
+<body>
+<header>
+  <div>
+    <div class="kicker">Câmbio</div>
+    <h1>Dólar hoje</h1>
+  </div>
+</header>
+
+<section class="rate">
+  <div id="rate" class="big"></div>
+  <div>
+    <div id="change" class="change"></div>
+    <div id="asof" class="asof"></div>
+  </div>
+</section>
+
+<section class="fx-body">
+  <svg id="chart" class="chart" viewBox="0 0 1180 560"></svg>
+  <div class="convert">
+    <h2>Quanto dá</h2>
+    <table id="table"></table>
+    <div class="credit">Cotação de referência do Banco Central Europeu (via frankfurter.dev), atualizada nos dias úteis.</div>
+  </div>
+</section>
+
+<div id="msg" class="msg">Carregando...</div>
+
+<script src="dolar.js"></script>
+</body>
+</html>
