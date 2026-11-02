@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="referrer" content="strict-origin-when-cross-origin">
+<title>Luanda Música</title>
+<style>html, body { margin: 0; height: 100%; background: #000; overflow: hidden; } #frame { width: 100%; height: 100%; }</style>
+</head>
+<body>
+<div id="frame"></div>
+<script>
+// Background music for the Brasil app's photo slideshow: musica.html?list=PLAYLIST_ID
+// Plays the YouTube playlist shuffled and on repeat; a song that won't play here is skipped.
+var list = (location.search.match(/[?&]list=([\w-]+)/) || [])[1];
+var player, shuffled = false;
+
+function onYouTubeIframeAPIReady() {
+  if (!list) return;
+  player = new YT.Player('frame', {
+    playerVars: { listType: 'playlist', list: list, autoplay: 1, controls: 0, loop: 1, playsinline: 1 },
+    events: {
+      onReady: function (e) { e.target.setVolume(70); e.target.playVideo(); },
+      onStateChange: function (e) {
+        // The playlist is known once the first song starts; then jump to a random one
+        if (e.data === YT.PlayerState.PLAYING && !shuffled) {
+          shuffled = true;
+          player.setShuffle(true);
+          player.setLoop(true);
+          var n = (player.getPlaylist() || []).length;
+          if (n > 1) player.playVideoAt(Math.floor(Math.random() * n));
+        }
+      },
+      onError: function () { setTimeout(function () { player.nextVideo(); }, 500); }
+    }
+  });
+}
+</script>
+<script src="https://www.youtube.com/iframe_api"></script>
+</body>
+</html>
