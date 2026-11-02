@@ -26,16 +26,23 @@ function onYouTubeIframeAPIReady() {
   if (!id) { document.getElementById('msg').textContent = 'Vídeo não informado'; return; }
   player = new YT.Player('frame', {
     videoId: id,
-    playerVars: { autoplay: 1, controls: 0, rel: 0, modestbranding: 1, playsinline: 1 },
+    playerVars: { autoplay: 1, controls: 0, rel: 0, modestbranding: 1, playsinline: 1, cc_load_policy: 0, iv_load_policy: 3 },
     events: {
-      onReady: function (e) { e.target.playVideo(); tell('ready'); watch(); },
+      onReady: function (e) { noCaptions(); e.target.playVideo(); tell('ready'); watch(); },
       onError: function (e) { document.getElementById('msg').textContent = 'Erro ' + e.data; tell('error:' + e.data); },
       onStateChange: function (e) {
-        if (e.data === YT.PlayerState.PLAYING) { started = true; tell('playing'); if (player.isMuted()) setTimeout(function () { player.unMute(); }, 500); }
+        if (e.data === YT.PlayerState.PLAYING) { noCaptions(); started = true; tell('playing'); if (player.isMuted()) setTimeout(function () { player.unMute(); }, 500); }
         if (e.data === YT.PlayerState.ENDED) tell('ended');
       }
     }
   });
+}
+
+// Captions come on by themselves (auto-generated track); switch them off.
+// The captions module only exists once playback starts, so this runs again on PLAYING.
+function noCaptions() {
+  try { player.setOption('captions', 'track', {}); } catch (e) {}
+  try { player.unloadModule('captions'); player.unloadModule('cc'); } catch (e) {}
 }
 
 // The TV's old Chromium sometimes leaves the video sitting unstarted (a black screen):
