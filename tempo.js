@@ -1,8 +1,9 @@
-// Weather details for the Brasil TV app: tempo.html?c=rio | edmond
+// Weather details for the Brasil TV app: tempo.html?c=delray | edmond
 // Runs on the TV's Chromium 63: ES2017, no optional chaining.
 (function () {
   var CITIES = {
     rio: { name: 'Rio de Janeiro', lat: -22.91, lon: -43.17 },
+    delray: { name: 'Delray Beach', lat: 26.46, lon: -80.07 },
     edmond: { name: 'Edmond', lat: 35.65, lon: -97.48 }
   };
   var ICONS = {
@@ -27,7 +28,7 @@
 
   var $ = function (id) { return document.getElementById(id); };
   var key = (location.search.match(/[?&]c=(\w+)/) || [])[1];
-  var city = CITIES[key] || CITIES.rio;
+  var city = CITIES[key] || CITIES.delray;
   $('city').textContent = city.name;
 
   // Times from the API are the city's own local time, e.g. "2026-10-31T14:00"
