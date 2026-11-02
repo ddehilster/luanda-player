@@ -28,11 +28,23 @@ function onYouTubeIframeAPIReady() {
     videoId: id,
     playerVars: { autoplay: 1, controls: 0, rel: 0, modestbranding: 1, playsinline: 1 },
     events: {
-      onReady: function (e) { e.target.playVideo(); tell('ready'); },
+      onReady: function (e) { e.target.playVideo(); tell('ready'); watch(); },
       onError: function (e) { document.getElementById('msg').textContent = 'Erro ' + e.data; tell('error:' + e.data); },
-      onStateChange: function (e) { if (e.data === YT.PlayerState.ENDED) tell('ended'); }
+      onStateChange: function (e) {
+        if (e.data === YT.PlayerState.PLAYING) { started = true; tell('playing'); if (player.isMuted()) setTimeout(function () { player.unMute(); }, 500); }
+        if (e.data === YT.PlayerState.ENDED) tell('ended');
+      }
     }
   });
+}
+
+// The TV's old Chromium sometimes leaves the video sitting unstarted (a black screen):
+// press play again, then try muted (always allowed) and unmute once it runs
+var started = false;
+function watch() {
+  setTimeout(function () { if (!started) player.playVideo(); }, 4000);
+  setTimeout(function () { if (!started) { player.mute(); player.playVideo(); } }, 8000);
+  setTimeout(function () { if (!started) tell('stalled'); }, 14000);
 }
 
 window.addEventListener('message', function (e) {
